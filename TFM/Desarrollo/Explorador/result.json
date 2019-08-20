@@ -1,0 +1,102 @@
+{
+    "adults": {
+        "max": 2,
+        "min": 1
+    },
+    "board": [
+        "Alojamiento y Desayuno",
+        "Solo Alojamiento"
+    ],
+    "date_from": {
+        "max": 20190330,
+        "min": 20170701
+    },
+    "date_to": {
+        "max": 20190331,
+        "min": 20170702
+    },
+    "days_in_advance": {
+        "max": 501,
+        "min": 0
+    },
+    "kids": {
+        "max": 1,
+        "min": 0
+    },
+    "min_stay": {
+        "max": 7,
+        "min": 2.0
+    },
+    "rate_normalized": [
+        NaN,
+        "Reembolsable",
+        "No Reembolsable"
+    ],
+    "room_normalized": [
+        "Individual",
+        "Estudio Deluxe",
+        "Familiar",
+        "Apartamento 2 dormitorios Deluxe",
+        "Suite Balcon",
+        "Doble Superior Con Vistas",
+        "Suite Premium",
+        "Familiar Superior",
+        "Apartamento 2 dormitorios Superior",
+        "Suite Junior Deluxe",
+        "Suite Superior Balcon",
+        "Doble Uso Individual Superior",
+        "Triple",
+        "Doble Premium",
+        "Suite Junior Balcon",
+        "Cuadruple Deluxe",
+        "Apartamento 1 Dormitorio Deluxe",
+        "Suite Deluxe",
+        "Doble Balcon",
+        "Apartamento 3 dormitorios",
+        "Doble Superior Con Vistas a la Piscina",
+        "Doble Superior Deluxe",
+        "Doble Deluxe Executive",
+        "Suite Junior Con Vistas Balcon",
+        "Estudio",
+        "Doble Con Vistas a la Piscina Premium",
+        "Familiar Premium",
+        "Doble Premium Balcon",
+        "Doble Con Vistas Premium",
+        "Cuadruple",
+        "Doble Spa",
+        "Doble Executive",
+        "Cuadruple Superior",
+        "Doble Deluxe Premium",
+        "Suite Junior Executive",
+        "Suite Junior",
+        "Doble Deluxe",
+        "Suite",
+        "Triple Executive",
+        "Doble Deluxe Balcon",
+        "Suite Executive",
+        "Apartamento 1 Dormitorio Superior",
+        "Doble Con Vistas Premium Balcon",
+        "Familiar Deluxe",
+        "Suite Superior",
+        "Apartamento 1 Dormitorio Balcon",
+        "Doble Superior Balcon",
+        "Apartamento 2 dormitorios",
+        "Doble Superior",
+        "Triple Superior",
+        "Triple Deluxe",
+        "Triple Premium",
+        "Apartamento 1 Dormitorio",
+        "Doble Premium Executive",
+        "Doble Uso Individual",
+        "Apartamento 3 dormitorios Deluxe",
+        "Doble",
+        "Familiar Executive",
+        "Estudio Balcon",
+        "Doble Deluxe Con Vistas",
+        "Doble Con Vistas"
+    ],
+    "stimestamp": {
+        "max": "2018-07-27 08:48:23",
+        "min": "2017-07-01 01:19:08"
+    }
+}

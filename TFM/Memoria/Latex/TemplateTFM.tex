@@ -1,0 +1,104 @@
+\documentclass[spanish,12pt,a4paper,twoside]{book}
+\usepackage{newclude} % Permite usar \include* que es igual que \include pero sin saltos de página adicionales
+%\includeonly{cap01} % con este comando solo se incluirán los archivos mencionados haciendo que la compilación sea mucho más rápida. Referencias a otros capítulos quedarán rotas, se recomienda una compilación limpia cada vez que se cambie esta línea (es decir, borrar ficheros intermedios cuando se descomenta/comenta/cambia el argumento)
+
+\usepackage[textwidth=15cm, textheight=22.5cm, top=3.5cm, bottom=3.5cm,left= 4cm,right=2cm]{geometry}
+
+\usepackage[es-tabla,es-nodecimaldot]{babel} % Cambiamos a idioma español
+\usepackage[utf8]{inputenc} % Decimos que espere codificación utf-8 de los ficheros
+\usepackage{csquotes} % Paquete recomendado por biblatex cuando se usa babel
+\usepackage[T1]{fontenc}
+
+\usepackage[hidelinks]{hyperref} % Referencias e índices son enlaces al contenido. La opción hidelinks hace que se vean como texto normal
+
+\usepackage{graphicx} % Gráficos y colores
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{subcaption}
+
+\usepackage[table]{xcolor} % Necesaria la opción table para usar filas de colores en las tablas.
+\usepackage{lipsum} % Para usar texto de relleno, sirve para tener una idea de cómo queda
+
+\usepackage{booktabs} % para los comandos toprule, midrule, cmidrule y bottomrule: líneas horizontales de las tablas
+\usepackage{threeparttable} % Entorno para las notas a pie de tabla
+
+%--- Paquete algorithm y personalizaciones ---%
+\usepackage{algorithm,algorithmic}
+\floatname{algorithm}{Altoritmo}
+\renewcommand{\listalgorithmname}{Índice de algoritmos}
+
+\usepackage{multirow}
+
+\usepackage{tikz}
+
+%--- Formato de títulos ---%
+\usepackage{titlesec} % Librería para cambiar el formato de \chapter, \section, ...
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\itshape}{\theparagraph}{1em}{} % formato de \paragraph: fuente y tamaño normales y cursiva. 1em de separación
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\itshape}{\thesubparagraph}{1em}{} % formato de \subparagraph: fuente y tamaño normales y cursiva. 1em de separación
+
+%--- AJUSTES MANUALES ---%
+
+% Definimos un nuevo entorno para tablas con filas alternando colores:
+%  - es necesario cargar el paquete xcolor con la opción table
+%  - Usar los comandos \hiderowcolors y \showrowcolors cuando se quiera parar o empezar a usar la alternancia de colores dentro de una tabla
+\newenvironment{stripedtable}
+	{\rowcolors{2}{gray!6}{white}\begin{table}}
+	{\end{table}\rowcolors{2}{}{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TÍTULO, RESUMEN, AGRADECIMIENTOS Y LISTAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	TÍTULO
+% Página con el título, hay que entrar en title.tex para modificar: nombre del trabajo, autor, tutores y fecha
+\include*{title}
+
+%	AGRADECIMIENTOS Y RESUMEN
+\include*{agradecimientos_y_resumen}
+
+%	ÍNDICE
+\tableofcontents % indice de contenidos
+
+%	INDICE DE FIGURAS, TABLAS Y ALGORITMOS
+\listoffigures
+\listoftables
+\listofalgorithms % Si no hay muchos algoritmos no tiene mucho sentido esta lista
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CUERPO DE LA TFM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+% TABLAS, FIGURAS, EXPRESIONES MATEMÁTICAS Y ALGORITMOS
+\include*{cap01}
+% CONTENIDOS DE LA TFM
+\include*{cap02}
+% CONCLUSIONES Y LÍNEAS FUTURAS DE TRABAJO
+\include*{cap03}
+% SOBRE LAS REFERENCIAS
+\include*{cap04}
+% ESQUELETO DE UN CAPÍTULO
+\include*{cap05}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APÉNDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+% ANEXOS
+\include*{anexos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BACKMATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%% Bibliografía
+\addcontentsline{toc}{chapter}{Bibliografía} % Para que salga en el índice general
+\begin{thebibliography}{00}
+	\bibitem{Ashtiani2014}  Ashtiani, M.H.Z., Ahmadabadi, M.N., Araabi, B.N. (2014). Bandit-based local feature subset selection. \emph{Neurocomputing} 138, 371--382.
+	\bibitem{Berry1985} Berry, D., Fristedt, B. (1985). \emph{Bandit problems}. London: Chapman and Hall.
+	\bibitem{Figueira2005} Figueira, J., Mousseau, V., Roy, B. (2005). Electre methods. En J. Figueira, S. Greco y M. Erghott (Eds.), \emph{Multiple criteria decision analysis. State of the art survey} (pp. 133--162). New York: Springer.
+	\bibitem{Li2010} Li, L., Chu, W., Langford, J., Schapire, R.E. (2010). A contextual-bandit approach to personalized news article recommendation. En \emph{Proceedings of the 19th International Conference on World Wide Web} (pp. 661--670). New York: ACM.
+	\bibitem{Mateos2009} Mateos, A., Jiménez, A. (2009). A trapezoidal fuzzy numbers-based approach for aggregating group preferences and ranking decision alternatives in MCDM. En M. Erghott, C.M. Fonseca, X. Gandibleux, H. Jao y M. Servaux (Eds.). \emph{Evolutionary multi-criterion optimization} (pp. 365--379). Berlin: Springer.
+	\bibitem{Sutton1998} Sutton, R. Barto, A. (1998). \emph{Reinforcement learning, an introduction}. Cambridge: MIT Press.
+	\bibitem{Thompson1933} Thompson, W.R. (1933). On the likelihood that one unknown probability exceeds another in view of the evidence of two samples. \emph{Biometrika} 25(3-4), 285--294.
+	\bibitem{Vicente2016} Vicente, E. (2016). \emph{Análisis y gestión del riesgo en los sistemas de información: Un enfoque borroso}. (Tesis doctoral). Universidad Politécnica de Madrid, Madrid.
+\end{thebibliography}
+
+\end{document}
